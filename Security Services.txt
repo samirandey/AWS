@@ -1,0 +1,160 @@
+Certificate Manager : 
+--> IF we need an SSL for Cloudfront (global), we need to generate ssl in N Virginia.
+--> We can generate in individual regions and we can apply to ELB.
+
+Cloudfront : 
+
+
+Cloudtrail: Enabled defaultly.
+--> Stores last 90 days activities.
+--> If we want to store for unlimited days, store in an s3 bucket.
+
+--> Management events : All regular activities. 
+--> Data events : S3 and lambda events
+--> Insights events : Insights events are records that capture an unusual call volume of write management APIs in your AWS account.
+
+In Org level, We create a different trail for every categery.
+
+Datadog
+Cloudchekr
+Splunk
+
+
+Config : Inventory or change management service on AWS
+
+
+
+Task 1: Launch a wordpress website and Deliver the website using ELB, configure SSL using ACM, and deliver the wordpress with https. (Perform application level https redirection using virtual host) 
+https://www.youtube.com/watch?v=93ekvcpzs1o
+
+Task 2: Deliver a ELB Website via Cloudfront distribution.  Use the Wordpress template.
+_______________________________________________________________________________________
+D: 22/2/2020
+
+AWS Inspector : Amazon Inspector enables you to analyze the behavior of your AWS resources and helps you identify potential security issues.
+CIS : Sets benchmarks for OS
+
+Directory Services: 
+AD Connector : To Intigrate AWS with On-Prem directotory services.
+--> Workspace (VDI)
+--> Workmail
+--> WorkDocs
+
+
+WAF : Web Application Firewall.. 
+
+--> Application Load Balancer / API Gateway
+--> Cloudfront
+
+Barracuda WAF, Fortigate WAF, F5 network WAF.. 
+
+
+AWS Shield : Designed to protect AWS environment from DDoS attacks.
+
+--> AWS Shield Standard : Free for everyone
+--> AWS Shield Advanced : $3,000/month
+
+
+Application Services : 
+______________________
+SNS : Simple Notification Service.. 
+	We can create a topic and add subscribers here. Send notifications to subscribers
+
+--> TOpic
+--> Push Notification
+--> SMS
+
+SES : Simple Email Service..
+--> Onbehalf of an Email / Domain, we can verify the email / domain.. 
+
+To Send bulk email, Use AWS Pinpoint service.. 
+
+Mailchimp
+EasySendyPro
+
+Pinpoint:
+--> Create a Segment (All email in a JSON/CSV)
+--> Create a Template (Messege/Email Body)
+--> Create a Campain
+
+SQS : Simple Queue Service.. 
+
+Free tier, 1 Million 
+--> To design a Decoupled application
+--> SQS also a Messeging service
+--> Max msg size 256 kb only.. 
+--> AWS COst us based on chunks.. 
+1 chunk = 64 kb.. 
+Message Retention Period:	4 days
+Default Visibility Timeout:	30 seconds
+
+Standard Queue: 
+FIFO Quoue : 
+
+
+Task : Migration Services: Migrate an AmazonLinux from Mumbai region to NV Region using Cloudendure.
+
+Task 2 : https://aws.amazon.com/getting-started/projects/deploy-drupal-with-amazon-rds/
+
+https://aws.amazon.com/getting-started/projects/deploy-wordpress-with-amazon-rds/
+
+https://avinash69.s3.ap-south-1.amazonaws.com/test3.pdf
+
+
+
+D: 23/02/2020
+
+CICD
+
+Code Pipeline 
+
+Git 
+DevOps with Jenkins (Maven, Tomcat apache, EC2 and deployement)
+
+
+GIt
+Jenkins
+Maven
+chef/puppet  (chef.io)
+beanstak/ec2withasg/ecs.. 
+
+
+https://www.udemy.com/course/jenkinswithavinash/?couponCode=FEBAVINASH
+
+https://www.udemy.com/course/gitbyavinash/?referralCode=F7D62CDB4D61EADE1CC7
+
+https://www.udemy.com/course/linuxwithavinash/?couponCode=FEBAVINASH
+
+
+Works for coming 3 Days only.. 
+
+
+Lambda : Serverless architecture: 
+.net core
+python
+node.js
+go
+ruby
+
+IaaC : Infrastructure as a Code : CLoudformation.. 
+
+JSON and we can deploy the stack, all resources creates automatically... 
+
+
+
+
+
+https://avinash69.s3.ap-south-1.amazonaws.com/share.zip
+
+
+
+
+
+
+
+
+
+
+
+
+

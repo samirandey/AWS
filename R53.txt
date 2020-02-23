@@ -1,0 +1,70 @@
+Route53 : AWS DNS Service..  DNS = Domain Naming system/Service.. 
+
+
+Domain registrers : AWS, Google, Godaddy, bigrock, Freenom.. 
+
+ICANN : The Internet Corporation for Assigned Names and Numbers : Domain uniqueness.. 
+
+IANA : Internet Assigned Numbers Authority (IANA) : Root Zone Database : 
+
+TLD: 
+.com
+.in
+.us
+
+SLD: 
+.co.in
+.co.uk
+.co.au
+
+Whoisdb : Shows the domain owner information : 
+
+Domain Name = HostedZone
+
+
+Records:
+
+SOA : Start of Authority Record :  
+NS : Name Servers : 4 NS : 
+
+Godaddy/freenom ... --> 
+
+ns-165.awsdns-20.com
+ns-1919.awsdns-47.co.uk
+ns-1090.awsdns-08.org
+ns-709.awsdns-24.net
+
+
+A : Address record : Name to IP / IP to name.. 
+AAAA : Address record for IPv6
+Alias Record : We can map aws resources along with A record.. 
+CNAME : Cananical Name 
+MX : Mail Exchange : 
+TXT, PTR
+
+A and Alias Record.. 
+
+
+Routing Polocies : 
+
+--> Simple RP
+--> Weighted RP
+--> Latency RP
+--> Failover RP
+--> GeoLocation RP
+--> MultiValue answer RP
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

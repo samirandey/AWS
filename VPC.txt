@@ -1,0 +1,178 @@
+VPC : Virtual Private Cloud : 
+
+Default VPC : User Friendly
+--> Internet facing 
+--> Every region contains one Default VPC
+--> Subnet = AZ count
+--> We cannot choose the IP address range. 
+--> All subnets are internet faced subnets. 
+--> If you delete Default VPC, We can get it back with a click. 
+--> Default VPC Configured with Class B IPV4
+
+Custom VPC : 
+--> We can choose our required CIDR (IP address range).
+--> We can create Public SUbnets and Private SUbnets.
+Public Subnet = Internet facing
+Private SUbnet = Not Internet Facing
+
+
+IP Address : 
+
+IPv4 : 32 Bit : 2^32 IP Addresses : 
+IPv6 : 128 Bit : 2^128 IP Addresses :
+
+IPv4 : 5 Classes
+
+CLass A : N.H.H.H : 
+CLass B : N.N.H.H :
+CLass C : N.N.N.H :
+
+CLass D : Multicasting
+CLass E : R & D
+
+127.0.0.1 / localhost  : loopback
+
+
+PRIVATE IP RANGES
+
+CLASS A: 10.0.0.0 to 10.255.255.255
+CLASS B: 172.16.0.0 to 172.31.255.255
+CLASS C: 192.168.0.0 to 192.168.255.255
+
+192.168.100.5
+192.168.100. 0-255
+
+0 --> Network ID
+255 --> Broadcost ID
+2 --> DNS Servers
+1 --> Future use
+
+
+/32	/31	/30	/29	/28	/27	/26  	/25	/24 ..... /16... /0
+
+2^0	2^1	2^2	2^3	2^4	2^5	2^6	2^7	  ............. 2^32
+
+1	2	4	8	16	32	64	128	256	65536	4M
+
+
+DefaultVPC :  172.31.0.0/16
+--> 3 AZ = 3 Subnets
+
+
+Custom VPC Creation : 
+
+Step 1 : Create a VPC (CustomVPC) (CIDR: 192.168.0.0/16) (65531 Usable IPs) (Max /16)
+
+Step 2 : Create Subnets under CustomVPC  (Supports /28 to /16)
+
+ap-south-1a : Public SUbnet : 192.168.1.0/24  (251 Usable IPs)
+sp-south-1b : Private Subnet : 192.168.2.0/24 (251 Usable IPs)
+
+Step 3 : Create an IGW and Associate with CustomVPC
+
+Step 4 : Created a ROuteTable under CustomVPC.
+
+	--> Added a route 0.0.0.0/0 --> InternetGateway
+	--> Subnet Association : ap-south-1a (Public Subnet)
+
+(Whatever the subnetys not associated in above step, Defaultly member of Main Route table and Main routetable doesn't have any IGW, so no internet)
+
+Step 5 (Optional) : Enable autoassign public settings on VPC.
+
+
+Task : Create VPC. 
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________
+D: 18/2/2020
+
+VPC Peering : 
+--> We can enable communication between multiple VPCs by using VPC Peering.
+--> VPC Peering is Non-Transitive.
+--> Same region : VPC 1 --> VPC2
+    Another Region VPC  --> Another Region VPC
+    AWS Account 1 VPC --> AWS Account 2 VPC
+
+
+	Requester VPC			Accepter VPC
+	Mumbai				NV
+VPC ID	vpc-048d13cdd02010458		vpc-02cae565
+CIDR 	192.168.0.0/16			172.31.0.0/16
+Region	ap-south-1			us-east-1
+					12 Digit AWS Account ID
+
+
+Use Gateway Endpoint, to access S3 Data from Private Subnet ec2 instances, without internet connection. 
+
+OPENVPN Deployment : 
+
+BOVPN / Site-to-Site VPN : 
+Step 1 : Create a "CustomerGateway" (Need to give Corporate PublicIP)
+Step 2 : Create VirtualPrivateGateway (AWS Side)
+Step 3 : Using CustomerGateway and VirtualPrivateGateway create a Site-to-siteVPN then download the configuration file and share it with Firewall Dept. 
+
+
+
+VPC Arch Digrams :
+
+--> Lucidcharts
+--> Draw.io
+--> Microsoft Visio
+--> Microsoft Powerpoint
+
+
+Task : Launch an ec2 instance in CustomVPC Private Subnet and make it as a webserver. 
+Create an ELB in CustomVPC public Subnet and Deliver the web[page from CustomVPC Private SUbnet instances.
+
+Task 2 : Apply NACLs to deny traffic to one network. 
+Task 3 ; Enable VPC Flowlogs to an s3 bucket and observe the logs related to blocked requestes/ allowed requests. 
+
+Task 4 : Design the AWS Architectural Digram With 
+--> One Public Subnet
+--> Two Private Subnets
+--> NAT and NACLs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
